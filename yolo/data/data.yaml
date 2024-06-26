@@ -1,0 +1,13 @@
+train: /home/sanju/yolo/data/train/images
+val: /home/sanju/yolo/data/valid/images
+test: /home/sanju/yolo/data/test/images
+
+nc: 1
+names: ['0']
+
+roboflow:
+  workspace: snaju
+  project: indianroad
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/snaju/indianroad/dataset/2
