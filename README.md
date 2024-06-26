@@ -7,6 +7,8 @@ This project contains two main directories:
 
 ## Training
 
+We trained the model using only potholes dataset, you can collect as many road condition features and annotate them using [roboflow](https://roboflow.com/annotate) or any other annotation tool, make sure to use yolov8 format for annotation read more [here](https://docs.ultralytics.com/datasets/detect/) 
+
 To train the model:
 
 1. Navigate to the YOLO directory:
