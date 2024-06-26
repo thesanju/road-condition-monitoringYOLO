@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Model Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+        .loading img {
+            width: 40px;
+            height: 40px;
+        }
+        .loading p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>YOLO Model Detection</h1>
+    <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg,.mp4" required>
+        <button type="submit">Upload and Detect</button>
+    </form>
+
+    <div id="loading" class="loading">
+        <img src="https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif" alt="Loading...">
+        <p>Processing video, please wait...</p>
+    </div>
+
+    {% if image_path %}
+        <h2>Detected Image:</h2>
+        <img src="{{ url_for('display', filename=image_path) }}" alt="Detected Image">
+    {% elif video_feed %}
+        <h2>Detected Video:</h2>
+        <video controls>
+            <source src="{{ url_for('video_feed') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function () {
+            document.getElementById('loading').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
