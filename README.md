@@ -1,5 +1,4 @@
 # YOLO Project
-Live preview http://34.30.190.159:5000/
 
 This project contains two main directories:
 1. Training
@@ -37,5 +36,9 @@ To run the model:
    ```
    python app.py
    ```
-
 This will start the interface for using your trained YOLO model.
+
+
+## Results
+https://github.com/user-attachments/assets/95805042-9d37-4536-9751-c978a2ed7af4
+
