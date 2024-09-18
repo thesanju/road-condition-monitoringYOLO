@@ -2,6 +2,8 @@ train: /home/sanju/yolo/data/train/images
 val: /home/sanju/yolo/data/valid/images
 test: /home/sanju/yolo/data/test/images
 
+#dir path of training, validating and testing images
+
 nc: 1
 names: ['0']
 
